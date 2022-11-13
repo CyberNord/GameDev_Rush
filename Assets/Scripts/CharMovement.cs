@@ -1,44 +1,43 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CharMovement : MonoBehaviour
 {
 
     // Variables
-    private float movementSpeed = 2.0f;
-    private Vector3 velocityVector3; 
+    private float movementSpeed = 5.0f;
+    private Vector3 velocityVector3;
+    private Vector3 movementVector;
+    private Vector2 movementInput;
 
 
     //Setting Variables
-    [SerializeField] private float walkSpeed = 2.0f;
-    [SerializeField] private float runSpeed = 5.0f;
+    [SerializeField] private float RotatingSpeed = 500.0f;
     [SerializeField] private bool isGrounded;
     [SerializeField] private float groundCheckDistance = 0.2f;
     [SerializeField] private LayerMask groundLayerMask;
     [SerializeField] private float gravity = -9.81f;
-    [SerializeField] private float jumpHeight = 2.0f;
+    [SerializeField] private float jumpHeight = 1.0f;
 
     // KeyCodes
-    [SerializeField] private KeyCode walkKCode = KeyCode.LeftShift;
     [SerializeField] private KeyCode jumpKCode = KeyCode.Space;
 
-    // Objects
+    // Objects - References
     private CharacterController characterController;
-
-
-
-
+    private Animator animator;
 
     // Start is called before the first frame update
     void Start()
     {
-        characterController = GetComponent<CharacterController>(); 
+        characterController = GetComponent<CharacterController>();
+        animator = GetComponentInChildren<Animator>(); 
     }
 
     // Update is called once per frame
     void Update()
     {
+        movementInput = GetInput();
+
+        if(Mathf.Abs(movementInput.x) < 0 && Mathf.Abs(movementInput.y) < 1) return;
         Move();
     }
 
@@ -51,18 +50,13 @@ public class CharMovement : MonoBehaviour
             velocityVector3.y = -2f;
         }
 
-        float dX = Input.GetAxisRaw("Horizontal") * movementSpeed; // A-D
-        float dZ = Input.GetAxisRaw("Vertical") * movementSpeed; // W-S
-
-        Vector3 movementVector = new Vector3(dX * Time.deltaTime, 0, dZ * Time.deltaTime);
+        
+        movementVector = new Vector3(movementInput.x * Time.deltaTime, 0, movementInput.y * Time.deltaTime);
 
         if (isGrounded)
         {
-            if (movementVector != Vector3.zero && Input.GetKey(walkKCode))
-            {
-                Walk();
-            }
-            else if (movementVector != Vector3.zero)
+           
+            if (movementVector != Vector3.zero)
             {
                 Run();
             }
@@ -73,6 +67,14 @@ public class CharMovement : MonoBehaviour
 
             movementVector = Vector3.ClampMagnitude(movementVector, movementSpeed);     // normalize
             movementVector = transform.TransformDirection(movementVector);              // transform to global coordinate System
+
+            if (! Input.GetKeyDown(KeyCode.S))
+            {
+                Quaternion toRotation = Quaternion.LookRotation(movementVector, Vector3.up);
+                transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, RotatingSpeed * Time.deltaTime);
+            }
+            
+            
 
             if (Input.GetKeyDown(jumpKCode))
             {
@@ -88,19 +90,40 @@ public class CharMovement : MonoBehaviour
         characterController.Move(velocityVector3 * Time.deltaTime);
     }
 
-    private void Idle()
+    private Vector2 GetInput()
     {
-        // idle
+        float dX = Input.GetAxisRaw("Horizontal") * movementSpeed; // A-D
+        float dZ = Input.GetAxisRaw("Vertical") * movementSpeed; // W-S
+
+
+       return new Vector2(dX, dZ); 
     }
 
-    private void Walk()
+    private void Idle()
     {
-        movementSpeed = walkSpeed;
+        animator.Play("Idle01");
     }
 
     private void Run()
     {
-        movementSpeed = runSpeed;
+
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            animator.Play("Run01Forwards");
+        }
+        else if (Input.GetKeyDown(KeyCode.S))
+        {
+            animator.Play("Run01Backwards");
+        }
+        else if (Input.GetKeyDown(KeyCode.A))
+        {
+            animator.Play("Run01Left");
+        }
+        else if (Input.GetKeyDown(KeyCode.D))
+        {
+            animator.Play("Run01Right");
+        }
+
     }
 
     private void Jump()
