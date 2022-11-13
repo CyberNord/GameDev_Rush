@@ -1,5 +1,6 @@
-Rush/Library
-Rush/Logs
-Rush/UserSettings
-Rush/.vsconfig
-Rush/Rush.sln
+/Library
+/Logs
+/UserSettings
+/.vsconfig
+/Rush.sln
+/Assets/Plugins
