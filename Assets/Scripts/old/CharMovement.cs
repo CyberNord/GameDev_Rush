@@ -2,25 +2,28 @@ using UnityEngine;
 
 public class CharMovement : MonoBehaviour
 {
+    /// <summary>
+    /// Old version - character rotatio resets itself all the time
+    /// </summary>
+    
 
-    // Variables
+    // MOVEMENT
     private float movementSpeed = 5.0f;
     private Vector3 velocityVector3;
     private Vector3 movementVector;
-    private Vector2 movementInput;
 
-
-    //Setting Variables
-    [SerializeField] private float RotatingSpeed = 500.0f;
+    // JUMP
+    [SerializeField] private KeyCode jumpKCode = KeyCode.Space;
     [SerializeField] private bool isGrounded;
     [SerializeField] private float groundCheckDistance = 0.2f;
     [SerializeField] private LayerMask groundLayerMask;
     [SerializeField] private float gravity = -9.81f;
     [SerializeField] private float jumpHeight = 1.0f;
 
-    // KeyCodes
-    [SerializeField] private KeyCode jumpKCode = KeyCode.Space;
+    // ROTATION
+    [SerializeField] private float RotatingSpeed = 500.0f;
 
+    
     // Objects - References
     private CharacterController characterController;
     private Animator animator;
@@ -36,7 +39,6 @@ public class CharMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        movementInput = GetInput();
         Move();
     }
 
@@ -49,8 +51,10 @@ public class CharMovement : MonoBehaviour
             velocityVector3.y = -2f;
         }
 
-        
-        movementVector = new Vector3(movementInput.x * Time.deltaTime, 0, movementInput.y * Time.deltaTime);
+        float dX = Input.GetAxisRaw("Horizontal") * movementSpeed; // A-D
+        float dZ = Input.GetAxisRaw("Vertical") * movementSpeed; // W-S
+
+        movementVector = new Vector3(dX * Time.deltaTime, 0, dZ * Time.deltaTime);
 
         if (isGrounded)
         {
@@ -68,13 +72,11 @@ public class CharMovement : MonoBehaviour
             movementVector = transform.TransformDirection(movementVector);              // transform to global coordinate System
 
             // Rotate character to direction selected
-            if (! Input.GetKeyDown(KeyCode.S))
+            if (!Input.GetKeyDown(KeyCode.S))
             {
                 Quaternion toRotation = Quaternion.LookRotation(movementVector, Vector3.up);
                 transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, RotatingSpeed * Time.deltaTime);
             }
-            
-            
 
             if (Input.GetKeyDown(jumpKCode))
             {
@@ -88,15 +90,6 @@ public class CharMovement : MonoBehaviour
         // calculate &apply gravity to player
         velocityVector3.y += gravity * Time.deltaTime;
         characterController.Move(velocityVector3 * Time.deltaTime);
-    }
-
-    private Vector2 GetInput()
-    {
-        float dX = Input.GetAxisRaw("Horizontal") * movementSpeed; // A-D
-        float dZ = Input.GetAxisRaw("Vertical") * movementSpeed; // W-S
-
-
-       return new Vector2(dX, dZ); 
     }
 
     private void Idle()
@@ -120,7 +113,6 @@ public class CharMovement : MonoBehaviour
         {
             animator.Play("Jump01");
         }
-
     }
 
     private void Jump()

@@ -360,7 +360,6 @@ GameObject:
   - component: {fileID: 6271003199570497501}
   - component: {fileID: 463168753038416337}
   - component: {fileID: 463168753038416364}
-  - component: {fileID: 463168753038416339}
   m_Layer: 0
   m_Name: PlayerModel
   m_TagString: Untagged
@@ -441,27 +440,6 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 1, z: 0}
---- !u!114 &463168753038416339
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 769245098082914077}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b5bb456f02879e44aa4347da4bf8f94, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RotatingSpeed: 500
-  isGrounded: 1
-  groundCheckDistance: 0.2
-  groundLayerMask:
-    serializedVersion: 2
-    m_Bits: 64
-  gravity: -9.81
-  jumpHeight: 1
-  jumpKCode: 32
 --- !u!1 &917235849507999628
 GameObject:
   m_ObjectHideFlags: 0
