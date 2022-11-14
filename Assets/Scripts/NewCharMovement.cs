@@ -11,12 +11,11 @@ public class NewCharMovement : MonoBehaviour
     [SerializeField] private CharacterController m_characterController;
 
     [Header("Collision")]
-    [SerializeField] private float m_groundCheckDistance = - 0.5f;
+    [SerializeField] private float m_groundCheckDistance = - 0.1f;
     [SerializeField] private LayerMask m_groundLayerMask;
 
     // Collision
     private bool m_isGrounded;
-    private bool m_wasGrounded;
     private bool walk; 
     private Vector3 m_velocityVector3;
      
@@ -33,8 +32,7 @@ public class NewCharMovement : MonoBehaviour
     // Jump
     private bool m_jumpInput = false;
     private float m_gravity = -9.81f;
-    private float m_jumpHeight = 1.2f;  
-    private Vector3 jump;
+    private float m_jumpHeight = 1.2f;
 
     private void Awake()
     {
@@ -93,7 +91,6 @@ public class NewCharMovement : MonoBehaviour
             {
                 // Jump
                 m_velocityVector3.y = Mathf.Sqrt(m_jumpHeight * -2 * m_gravity);
-                m_animator.Play("Jump");
             }
         }
 
@@ -116,34 +113,45 @@ public class NewCharMovement : MonoBehaviour
         
 
         // reset variables
-        m_wasGrounded = m_isGrounded;
         m_jumpInput = false;
+        m_animator.SetBool("isGrounded", m_isGrounded);
     }
 
     private void Animate()
     {
-        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D))
+        if (!m_isGrounded && Input.GetKey(KeyCode.Space)) 
         {
-            m_animator.Play("RunForwards");
+            m_animator.Play("Jump"); ;
+        }
+            
+
+        if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.LeftShift) ||
+            Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.LeftShift) ||
+            Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.LeftShift)
+           )
+        {
+            // WalkForwards
+            m_animator.SetFloat("Motion",0.5f, 0.15f, Time.deltaTime );
+        }
+        else if (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.LeftShift))
+        {
+            // WalkBackwards
+            m_animator.SetFloat("Motion", -0.5f, 0.15f, Time.deltaTime);
+        }
+        else if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
+        {
+            // RunForwards
+            m_animator.SetFloat("Motion", 1f, 0.15f, Time.deltaTime);
         }
         else if (Input.GetKeyDown(KeyCode.S))
         {
-            m_animator.Play("RunBackwards");
-        }
-        else if (Input.GetKeyDown(KeyCode.W) && Input.GetKeyDown(KeyCode.LeftShift) ||
-                 Input.GetKeyDown(KeyCode.A) && Input.GetKeyDown(KeyCode.LeftShift) ||
-                 Input.GetKeyDown(KeyCode.D) && Input.GetKeyDown(KeyCode.LeftShift)
-                 )
-        {
-            m_animator.Play("WalkForwards");
-        }
-        else if (Input.GetKeyDown(KeyCode.S) && Input.GetKeyDown(KeyCode.LeftShift))
-        {
-            m_animator.Play("RWalkBackwards");
+            // RunBackwards
+            m_animator.SetFloat("Motion", -1, 0.15f, Time.deltaTime);
         }
         else
         {
-            m_animator.Play("Idle");
+            // Idle
+            m_animator.SetFloat("Motion", 0, 0.15f, Time.deltaTime);
         }
     }
 }

@@ -1,0 +1,28 @@
+   Lazy Controller
+   
+   private void Animate()
+    {
+        if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.LeftShift) ||
+            Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.LeftShift) ||
+            Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.LeftShift)
+           )
+        {
+            m_animator.Play("WalkForwards");
+        }
+        else if (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.LeftShift))
+        {
+            m_animator.Play("WalkBackwards");
+        }
+        else if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
+        {
+            m_animator.Play("RunForwards");
+        }
+        else if (Input.GetKeyDown(KeyCode.S))
+        {
+            m_animator.Play("RunBackwards");
+        }
+        else
+        {
+            m_animator.Play("Idle");
+        }
+    }
