@@ -29,15 +29,14 @@ public class CharMovement : MonoBehaviour
     void Start()
     {
         characterController = GetComponent<CharacterController>();
-        animator = GetComponentInChildren<Animator>(); 
+        animator = GetComponentInChildren<Animator>();
+        animator.applyRootMotion = false; 
     }
 
     // Update is called once per frame
     void Update()
     {
         movementInput = GetInput();
-
-        if(Mathf.Abs(movementInput.x) < 0 && Mathf.Abs(movementInput.y) < 1) return;
         Move();
     }
 
@@ -60,7 +59,7 @@ public class CharMovement : MonoBehaviour
             {
                 Run();
             }
-            else //if (movementVector == Vector3.zero)
+            else
             {
                 Idle();
             }
@@ -68,6 +67,7 @@ public class CharMovement : MonoBehaviour
             movementVector = Vector3.ClampMagnitude(movementVector, movementSpeed);     // normalize
             movementVector = transform.TransformDirection(movementVector);              // transform to global coordinate System
 
+            // Rotate character to direction selected
             if (! Input.GetKeyDown(KeyCode.S))
             {
                 Quaternion toRotation = Quaternion.LookRotation(movementVector, Vector3.up);
@@ -107,6 +107,7 @@ public class CharMovement : MonoBehaviour
     private void Run()
     {
 
+        
         if (Input.GetKeyDown(KeyCode.W))
         {
             animator.Play("Run01Forwards");
@@ -115,19 +116,16 @@ public class CharMovement : MonoBehaviour
         {
             animator.Play("Run01Backwards");
         }
-        else if (Input.GetKeyDown(KeyCode.A))
+        else if (Input.GetKeyDown(KeyCode.Space))
         {
-            animator.Play("Run01Left");
-        }
-        else if (Input.GetKeyDown(KeyCode.D))
-        {
-            animator.Play("Run01Right");
+            animator.Play("Jump01");
         }
 
     }
 
     private void Jump()
     {
+        animator.Play("Jump01");
         velocityVector3.y = Mathf.Sqrt(jumpHeight * -2 * gravity);
     }
 }
