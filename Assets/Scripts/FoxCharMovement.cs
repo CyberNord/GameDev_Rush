@@ -7,10 +7,13 @@ using UnityEngine;
 public class FoxCharMovement : MonoBehaviour
 {
     [Header("Movement")]
-    [SerializeField] private float m_moveSpeed;
+    [SerializeField] private float m_MoveSpeed = 3;
+    [SerializeField] private float m_RunSpeed = 6;
     [SerializeField] private float m_jumpHeight;
+    private float m_speedMultiplicator;
 
     private Rigidbody m_RigidBody;
+    private GameManager gm;
 
     private List<Collider> m_collisions = new List<Collider>();
     private bool m_isGrounded;
@@ -20,42 +23,61 @@ public class FoxCharMovement : MonoBehaviour
     private readonly float m_interpolation = 10;
     private float m_turnSpeed = 300;
 
-    private Animator m_Animator; 
+    private Animator m_Animator;
+
+    private bool isDed = false;  
 
 
     // Start is called before the first frame update
     void Start()
     {
         m_RigidBody = GetComponent<Rigidbody>();
+        gm = FindObjectOfType<GameManager>();
         m_Animator = GetComponent<Animator>(); 
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        //TurnCtr();
-        RunCtr();
-        JumpCtr();
+        if (!isDed)
+        {
+            RunCtr();
+            JumpCtr();
+        }
+        else
+        {
+            Die(); 
+        }
+        
     }
 
+    void Update()
+    {
+        if (gm.gameState == GameManager.GameState.GameOver)
+        {
+            isDed = true;
+        }
+    }
 
     void RunCtr()
     {
         float moveZ = Input.GetAxis("Vertical");
         float moveX = Input.GetAxis("Horizontal");
 
+        m_speedMultiplicator = Input.GetKey(KeyCode.LeftShift) ? m_MoveSpeed : m_RunSpeed;
+
         Debug.Log("(Horizontal)X="+ moveX + " (Vertical)Z=" + moveZ);
 
         Vector3 movement = new Vector3(moveX, 0f, moveZ);
 
-        m_RigidBody.MovePosition(transform.position + movement * m_moveSpeed * Time.deltaTime);
+        m_RigidBody.MovePosition(transform.position + movement * m_speedMultiplicator * Time.deltaTime);
 
 
         // TurnCtr - 
         m_currentZ = Mathf.Lerp(m_currentZ, moveZ, Time.deltaTime * m_interpolation);
         m_currentX = Mathf.Lerp(m_currentX, moveX, Time.deltaTime * m_interpolation);
 
-        transform.position += transform.forward * m_currentZ * m_moveSpeed * Time.deltaTime;
+        transform.position += transform.forward * m_currentZ * m_speedMultiplicator * Time.deltaTime;
         transform.Rotate(0, m_currentX * m_turnSpeed * Time.deltaTime, 0);
 
         m_Animator.SetFloat("isMoving", (Mathf.Abs(moveX)+Mathf.Abs(moveZ)));
@@ -77,6 +99,12 @@ public class FoxCharMovement : MonoBehaviour
             m_Animator.SetBool("Jump", true);
             m_Animator.SetBool("isInAir", true);
         }
+    }
+
+    private void Die()
+    {
+        //m_Animator.SetBool("isDed", true); 
+        m_Animator.SetTrigger("isDed");
     }
 
     /// <summary>
