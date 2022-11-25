@@ -10588,7 +10588,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100000, guid: 60ea8a8ee79fc564294d0a35f8b0ae4a, type: 3}
       propertyPath: m_Name
-      value: Teleporter Pad A
+      value: Teleporter in
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 60ea8a8ee79fc564294d0a35f8b0ae4a, type: 3}
       propertyPath: m_RootOrder
@@ -13743,7 +13743,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100000, guid: 931a75669ffc1214f93c0d969895e8a1, type: 3}
       propertyPath: m_Name
-      value: Teleporter Pad B
+      value: Teleporter out
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 931a75669ffc1214f93c0d969895e8a1, type: 3}
       propertyPath: m_RootOrder
