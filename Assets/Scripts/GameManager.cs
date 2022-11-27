@@ -62,6 +62,9 @@ public class GameManager : MonoBehaviour
             case GameState.GameOver:
                 SceneManager.LoadScene("GameOver");
                 break;
+            case GameState.TestLevel2:
+                SceneManager.LoadScene("testlevel");
+                break;
             case GameState.Idle:
                 break;
             default:
@@ -76,6 +79,7 @@ public class GameManager : MonoBehaviour
         Idle,
         gameMenu, 
         TestLevel,
-        GameOver
+        TestLevel2,
+        GameOver,
     }
 }
