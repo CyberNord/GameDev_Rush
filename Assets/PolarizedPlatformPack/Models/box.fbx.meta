@@ -1,0 +1,176 @@
+fileFormatVersion: 2
+guid: 1f203d3d33d89234aa7ae161406a2678
+timeCreated: 1432486288
+licenseType: Store
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: box
+    100004: box2
+    100006: box2.001
+    100008: box2.002
+    100010: box2.003
+    100012: boxold
+    100014: Camera
+    100016: Camera.001
+    100018: cloud
+    100020: coin
+    100022: Cube
+    100024: deciduoustree
+    100026: deciduoustree2
+    100028: deciduoustree3
+    100030: deciduoustree4
+    100032: fence
+    100034: fenceend
+    100036: house
+    100038: Lamp
+    100040: pinetree
+    100042: stone1
+    100044: stone2
+    100046: stone3
+    400000: //RootNode
+    400002: box
+    400004: box2
+    400006: box2.001
+    400008: box2.002
+    400010: box2.003
+    400012: boxold
+    400014: Camera
+    400016: Camera.001
+    400018: cloud
+    400020: coin
+    400022: Cube
+    400024: deciduoustree
+    400026: deciduoustree2
+    400028: deciduoustree3
+    400030: deciduoustree4
+    400032: fence
+    400034: fenceend
+    400036: house
+    400038: Lamp
+    400040: pinetree
+    400042: stone1
+    400044: stone2
+    400046: stone3
+    2300000: //RootNode
+    2300002: box
+    2300004: box2
+    2300006: box2.001
+    2300008: box2.002
+    2300010: box2.003
+    2300012: boxold
+    2300014: cloud
+    2300016: coin
+    2300018: Cube
+    2300020: deciduoustree
+    2300022: deciduoustree2
+    2300024: deciduoustree3
+    2300026: deciduoustree4
+    2300028: fence
+    2300030: fenceend
+    2300032: house
+    2300034: pinetree
+    2300036: stone1
+    2300038: stone2
+    2300040: stone3
+    3300000: //RootNode
+    3300002: box
+    3300004: box2
+    3300006: box2.001
+    3300008: box2.002
+    3300010: box2.003
+    3300012: boxold
+    3300014: cloud
+    3300016: coin
+    3300018: Cube
+    3300020: deciduoustree
+    3300022: deciduoustree2
+    3300024: deciduoustree3
+    3300026: deciduoustree4
+    3300028: fence
+    3300030: fenceend
+    3300032: house
+    3300034: pinetree
+    3300036: stone1
+    3300038: stone2
+    3300040: stone3
+    4300000: box
+    4300002: box2
+    4300004: box2.002
+    4300006: box2.003
+    4300008: box2.001
+    4300010: boxold
+    4300012: coin
+    4300014: stone3
+    4300016: stone2
+    4300018: stone1
+    4300020: deciduoustree4
+    4300022: deciduoustree3
+    4300024: deciduoustree2
+    4300026: cloud
+    4300028: fenceend
+    4300030: house
+    4300032: fence
+    4300034: Cube
+    4300036: deciduoustree
+    4300038: pinetree
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 3
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
