@@ -15,7 +15,7 @@ public class DieOnTouch : MonoBehaviour
     {
         gm.gameState = GameManager.GameState.GameOver;
         Invoke("GoToGameOver", 4f);
-        
+
     }
 
     private void GoToGameOver()
