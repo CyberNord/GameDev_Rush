@@ -7,9 +7,9 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager gameManager;
-    public GameState gameState = GameState.Idle; 
+    public GameState gameState = GameState.Idle;
 
-    public static event Action<GameState> OnGameStateChanged;
+    public int Lives = 3; 
 
     // Make sure its the one and only
     private void Awake()
@@ -55,21 +55,33 @@ public class GameManager : MonoBehaviour
         {
             case GameState.gameMenu:
                 SceneManager.LoadScene("GameMenu");
+                UnlockCursor(); 
                 break;
             case GameState.TestLevel:
                 SceneManager.LoadScene("TestingEnvironment");
                 break;
             case GameState.GameOver:
                 SceneManager.LoadScene("GameOver");
+                UnlockCursor();
                 break;
-            case GameState.TestLevel2:
-                SceneManager.LoadScene("testlevel");
+            case GameState.Level1:
+                SceneManager.LoadScene("Level1");
+                Lives = 3;
+                break;
+            case GameState.YouWon:
+                SceneManager.LoadScene("YouWon");
+                UnlockCursor();
                 break;
             case GameState.Idle:
                 break;
             default:
                 throw new ArgumentOutOfRangeException(nameof(gameState), gameState, null);
         }
+    }
+
+    void UnlockCursor()
+    {
+        Cursor.lockState = CursorLockMode.None;
     }
 
 
@@ -79,7 +91,9 @@ public class GameManager : MonoBehaviour
         Idle,
         gameMenu, 
         TestLevel,
-        TestLevel2,
+        Level1,
+        Level2,
         GameOver,
+        YouWon,
     }
 }

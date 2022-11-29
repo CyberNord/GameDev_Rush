@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DieOnTouch : MonoBehaviour
+public class YouWon : MonoBehaviour
 {
     private GameManager gm;
 
@@ -13,12 +13,12 @@ public class DieOnTouch : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        gm.Lives -= 1; 
-        gm.gameState = GameManager.GameState.GameOver;
-        Invoke("GoToGameOver", 6f);
+        gm.Lives -= 1;
+        gm.gameState = GameManager.GameState.YouWon;
+        Invoke("GoToWin", 3f);
     }
-    
-    private void GoToGameOver()
+
+    private void GoToWin()
     {
         gm.CheckState();
     }

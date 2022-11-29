@@ -21,4 +21,10 @@ public class GameOverButtons : MonoBehaviour
         Debug.Log("Click!");
 
     }
+
+    public void Exit()
+    {
+        Application.Quit();
+
+    }
 }

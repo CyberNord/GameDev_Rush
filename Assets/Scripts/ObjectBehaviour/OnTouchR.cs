@@ -32,5 +32,20 @@ public class OnTouchR : MonoBehaviour
         {
             transform.Rotate(0.0f, 0.0f, angle);
         }
+
+
+        yield return new WaitForSeconds(activationTime);
+        if (turnX)
+        {
+            transform.Rotate(-angle, 0.0f, 0.0f);
+        }
+        else if (turnY)
+        {
+            transform.Rotate(0.0f, -angle, 0.0f);
+        }
+        else if (turnZ)
+        {
+            transform.Rotate(0.0f, 0.0f, -angle);
+        }
     }
 }

@@ -21,12 +21,24 @@ public class GameMenuButtons : MonoBehaviour
         Debug.Log("Clicked LoadTestScene!");
         gm.gameState = GameManager.GameState.TestLevel;
         gm.CheckState();
-        //SceneManager.LoadScene("TestingEnvironment"); 
+    }
+
+    public void NewGame()
+    {
+        Debug.Log("Clicked NewGame!");
+        gm.gameState = GameManager.GameState.Level1;
+        gm.CheckState();
     }
 
     public void testClick()
     {
         Debug.Log("Click!");
         
+    }
+
+    public void Exit()
+    {
+        Application.Quit();
+
     }
 }

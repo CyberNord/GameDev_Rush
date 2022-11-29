@@ -1040,7 +1040,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1404265554}
         m_TargetAssemblyTypeName: GameOverButtons, Assembly-CSharp
-        m_MethodName: testClick
+        m_MethodName: Exit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1221,6 +1221,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameState: 0
+  Lives: 3
 --- !u!4 &1741510104
 Transform:
   m_ObjectHideFlags: 0

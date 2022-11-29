@@ -25,28 +25,39 @@ public class FoxCharMovement : MonoBehaviour
 
     private Animator m_Animator;
 
-    private bool isDed = false;  
+    private bool isDed = false;
 
+    private Vector3 respawnPoint;
+    private GameManager.GameState curr;
 
     // Start is called before the first frame update
     void Start()
     {
         m_RigidBody = GetComponent<Rigidbody>();
         gm = FindObjectOfType<GameManager>();
-        m_Animator = GetComponent<Animator>(); 
+        m_Animator = GetComponent<Animator>();
+
+        respawnPoint = transform.position;
+        curr = gm.gameState; 
+        Debug.Log("current Level is " + curr);
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (!isDed)
+        if (isDed)
         {
-            RunCtr();
-            JumpCtr();
+            Die();
+        }
+        else if(gm.gameState == GameManager.GameState.YouWon)
+        {
+            m_Animator.SetTrigger("won"); 
         }
         else
         {
-            Die(); 
+            RunCtr();
+            JumpCtr();
         }
         
     }
@@ -57,10 +68,16 @@ public class FoxCharMovement : MonoBehaviour
         {
             isDed = true;
         }
+
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
     }
 
     void RunCtr()
     {
+        
         float moveZ = Input.GetAxis("Vertical");
         float moveX = Input.GetAxis("Horizontal");
 
@@ -68,9 +85,9 @@ public class FoxCharMovement : MonoBehaviour
 
         Debug.Log("(Horizontal)X="+ moveX + " (Vertical)Z=" + moveZ);
 
-        Vector3 movement = new Vector3(moveX, 0f, moveZ);
+        Vector3 movement = new Vector3(moveX * 1.4f , 0f, moveZ * m_speedMultiplicator);
 
-        m_RigidBody.MovePosition(transform.position + movement * m_speedMultiplicator * Time.deltaTime);
+        m_RigidBody.MovePosition(transform.position + movement  * Time.deltaTime);
 
 
         // TurnCtr - 
@@ -83,6 +100,7 @@ public class FoxCharMovement : MonoBehaviour
         m_Animator.SetFloat("isMoving", (Mathf.Abs(moveX)+Mathf.Abs(moveZ)));
         m_Animator.SetFloat("Run", moveZ);
         m_Animator.SetFloat("Turn", moveX);
+        
 
     }
 
@@ -103,8 +121,31 @@ public class FoxCharMovement : MonoBehaviour
 
     private void Die()
     {
-        //m_Animator.SetBool("isDed", true); 
+        m_Animator.SetBool("isDed", true);
         m_Animator.SetTrigger("isDed");
+        if (gm.Lives >= 0)
+        {
+            Invoke("Respawn", 4f);
+        }
+
+    }
+
+    private void Respawn()
+    {
+        transform.position = respawnPoint;
+        isDed = false;
+        m_Animator.SetBool("isDed", false);
+        gm.gameState = curr;
+        Debug.Log("Respawned. Lives left = " + gm.Lives);
+    }
+
+    private void OnTriggerEnter(Collider collision)
+    {
+        if (collision.tag == "Checkpoint")
+        {
+            Debug.Log("Checkpoint");
+            respawnPoint = transform.position;
+        }
     }
 
     /// <summary>
