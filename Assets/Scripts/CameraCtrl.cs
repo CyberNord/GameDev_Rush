@@ -6,13 +6,17 @@ using UnityEngine;
 public class CameraCtrl : MonoBehaviour
 {
 
-    public float rotationY = 0.0f;
-    public float rotationX = 0.0f;
+    public float rotationY;
+    public float rotationX;
 
     [Header("Mouse Settings")]
     [SerializeField] private float mouseSensitivity = 1.0f;
     [SerializeField] private Transform target;
-    [SerializeField] private float distanceFromTarget = 5;
+    private float distanceFromTarget = 7;
+
+    private int MIN_DIST = 1; 
+    private int MAX_DIST = 8; 
+    
 
     private Vector3 curRotationVector3;
     private Vector3 smoothVelocityVector3 = Vector3.zero;
@@ -21,24 +25,56 @@ public class CameraCtrl : MonoBehaviour
 
     void Update()
     {
-        
-        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity;
-        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity;
+        // zoom in or out
+        float scroll = Input.GetAxis("Mouse ScrollWheel");
 
-        rotationY += mouseX;
-        rotationX -= mouseY;
+        if (scroll != 0)
+        {
+            switch (scroll)
+            {
+                case > 0:
+                {
+                    if (distanceFromTarget > MIN_DIST)
+                    {
+                        distanceFromTarget -= .5f;
+                    }
 
-        // limit axis
-        rotationX = Mathf.Clamp(rotationX, 10, 80);
+                    break;
+                }
+                case < 0:
+                {
+                    if (distanceFromTarget < MAX_DIST)
+                    {
+                        distanceFromTarget += .5f;
+                    }
 
-        // smoothing
-        Vector3 nextRotationVector3 = new Vector3(rotationX, rotationY, 0);
-        curRotationVector3 = Vector3.SmoothDamp(curRotationVector3, nextRotationVector3, ref smoothVelocityVector3,smoothTime);
+                    break;
+                }
+            }
+        }
 
-        // apply rotation
-        transform.localEulerAngles = curRotationVector3;
+        if (Input.GetKey(KeyCode.Mouse1))
+        {
+            float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity;
+            float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity;
+
+            rotationY += mouseX;
+            rotationX -= mouseY;
+
+            // limit axis
+            rotationX = Mathf.Clamp(rotationX, 10, 80);
+
+            // smoothing
+            Vector3 nextRotationVector3 = new Vector3(rotationX, rotationY, 0);
+            curRotationVector3 = Vector3.SmoothDamp(curRotationVector3, nextRotationVector3, ref smoothVelocityVector3,
+                smoothTime);
+
+            // apply rotation
+            transform.localEulerAngles = curRotationVector3;
+        }
 
         // follow Target Object
-        transform.position = target.position - transform.forward * distanceFromTarget; 
+        transform.position = target.position - transform.forward * distanceFromTarget;
+        
     }
 }
