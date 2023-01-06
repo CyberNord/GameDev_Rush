@@ -41,14 +41,14 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\Plugins\Dungeon Pack\Scripts\SpikeTrapDemo.cs" />
      <Compile Include="Assets\Plugins\Animal People Fox\Scripts\FreeCameraLogic.cs" />
      <Compile Include="Assets\Plugins\PolarizedPlatformPack\Demo\Scripts\ViewDrag.cs" />
      <Compile Include="Assets\Plugins\Animal People Fox\Scripts\DemoFree.cs" />
      <Compile Include="Assets\Plugins\Animal People Fox\Scripts\SimpleSampleCharacterControl.cs" />
+     <Compile Include="Assets\Plugins\Dungeon Pack\Scripts\TrapDoorDemo.cs" />
      <Compile Include="Assets\Plugins\Animal People Fox\Scripts\AccessoryLogic.cs" />
      <Compile Include="Assets\Plugins\Animal People Fox\Scripts\AccessoryWearLogic.cs" />
-     <Compile Include="Assets\Plugins\Dungeon Pack\Scripts\SpikeTrapDemo.cs" />
-     <Compile Include="Assets\Plugins\Dungeon Pack\Scripts\TrapDoorDemo.cs" />
      <None Include="Assets\Plugins\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\Plugins\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\Plugins\TextMesh Pro\Shaders\TMP_Bitmap.shader" />

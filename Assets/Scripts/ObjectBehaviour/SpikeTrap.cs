@@ -5,17 +5,12 @@ using UnityEngine;
 
 public class SpikeTrap : MonoBehaviour
 {
-    //This script goes on the SpikeTrap prefab;
 
-    public Animator spikeTrapAnim; //Animator for the SpikeTrap;
-
-    // Use this for initialization
+    public Animator spikeTrapAnim;
+    
     void Awake()
     {
-        //get the Animator component from the trap;
         spikeTrapAnim = GetComponent<Animator>();
-        // //start opening and closing the trap for demo purposes;
-        // StartCoroutine(OpenCloseTrap());
     }
 
     private void OnTriggerEnter(Collider other)

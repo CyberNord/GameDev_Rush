@@ -1,16 +1,35 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager gameManager;
+    private static int LIVEPOOL = 3;
+    
+    // public TMP_Text livesText;
     public GameState gameState = GameState.Idle;
+    
+    private int lives = LIVEPOOL;
 
-    public int Lives = 3; 
-
+    public int GetLives()
+    {
+        return lives; 
+    }
+    
+    public void SetLives(int lives_new)
+    {
+        lives = lives_new; 
+    }
+    
+    public void reduceLives()
+    {
+        lives -= 1; 
+    }
+    
     // Make sure its the one and only
     private void Awake()
     {
@@ -45,7 +64,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        // livesText.text = lives + " Livesasd";
     }
 
 
@@ -66,7 +85,7 @@ public class GameManager : MonoBehaviour
                 break;
             case GameState.Level1:
                 SceneManager.LoadScene("Level1");
-                Lives = 3;
+                lives = LIVEPOOL;
                 break;
             case GameState.YouWon:
                 SceneManager.LoadScene("YouWon");

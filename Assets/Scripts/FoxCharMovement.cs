@@ -123,7 +123,7 @@ public class FoxCharMovement : MonoBehaviour
     {
         m_Animator.SetBool("isDed", true);
         m_Animator.SetTrigger("isDed");
-        if (gm.Lives >= 0)
+        if (gm.GetLives() >= 0)
         {
             Invoke("Respawn", 4f);
         }
@@ -136,7 +136,7 @@ public class FoxCharMovement : MonoBehaviour
         isDed = false;
         m_Animator.SetBool("isDed", false);
         gm.gameState = curr;
-        Debug.Log("Respawned. Lives left = " + gm.Lives);
+        Debug.Log("Respawned. Lives left = " + gm.GetLives());
     }
 
     private void OnTriggerEnter(Collider collision)

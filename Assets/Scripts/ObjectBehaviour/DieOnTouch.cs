@@ -13,7 +13,7 @@ public class DieOnTouch : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        gm.Lives -= 1; 
+        gm.reduceLives(); // lives -1  
         gm.gameState = GameManager.GameState.GameOver;
         Invoke("GoToGameOver", 6f);
     }

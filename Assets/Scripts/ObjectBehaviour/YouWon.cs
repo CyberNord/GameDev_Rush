@@ -13,7 +13,7 @@ public class YouWon : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        gm.Lives -= 1;
+        gm.reduceLives(); // lives - 1
         gm.gameState = GameManager.GameState.YouWon;
         Invoke("GoToWin", 3f);
     }
