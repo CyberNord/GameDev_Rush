@@ -13551,7 +13551,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameState: 0
-  Lives: 3
 --- !u!4 &1912733747
 Transform:
   m_ObjectHideFlags: 0
@@ -14089,7 +14088,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1995765546}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.3465036, y: -1.3408891, z: -2.6411798}
+  m_LocalPosition: {x: -434, y: -1.3408891, z: -383}
   m_LocalScale: {x: 1.3503691, y: 2.2278223, z: 2.2278223}
   m_ConstrainProportionsScale: 0
   m_Children: []
