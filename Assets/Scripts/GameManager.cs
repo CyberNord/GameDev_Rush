@@ -1,33 +1,33 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using TMPro;
+using UI;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using static UserConstants.Constants;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager gameManager;
-    private static int LIVEPOOL = 3;
-    
+    private const int LIVEPOOL = 1;
+    public TimeScore currentTimeScore; 
+
     // public TMP_Text livesText;
     public GameState gameState = GameState.Idle;
-    
-    private int lives = LIVEPOOL;
+
+    private int _lives = LIVEPOOL;
 
     public int GetLives()
     {
-        return lives; 
+        return _lives; 
     }
     
     public void SetLives(int lives_new)
     {
-        lives = lives_new; 
+        _lives = lives_new; 
     }
     
-    public void reduceLives()
+    public void ReduceLives()
     {
-        lives -= 1; 
+        _lives -= 1; 
     }
     
     // Make sure its the one and only
@@ -46,7 +46,7 @@ public class GameManager : MonoBehaviour
     }
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         if (gameManager == null)
         {
@@ -56,9 +56,6 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
-        //CheckState()
-
     }
 
     // Update is called once per frame
@@ -77,7 +74,7 @@ public class GameManager : MonoBehaviour
                 UnlockCursor(); 
                 break;
             case GameState.TestLevel:
-                SceneManager.LoadScene("TestingEnvironment");
+                // SceneManager.LoadScene("TestingEnvironment");
                 break;
             case GameState.GameOver:
                 SceneManager.LoadScene("GameOver");
@@ -85,7 +82,9 @@ public class GameManager : MonoBehaviour
                 break;
             case GameState.Level1:
                 SceneManager.LoadScene("Level1");
-                lives = LIVEPOOL;
+                _lives = LIVEPOOL;
+                break;
+            case GameState.Level2:
                 break;
             case GameState.YouWon:
                 SceneManager.LoadScene("YouWon");
@@ -97,14 +96,51 @@ public class GameManager : MonoBehaviour
                 throw new ArgumentOutOfRangeException(nameof(gameState), gameState, null);
         }
     }
+    
+    // Highscore
+    public void UpdateHighScore()
+    {
+        var t = currentTimeScore.GetTimeScore();
+        if (!(t < GetHighScore_3())) return;
+        if (t < GetHighScore_2())
+        {
+            if (t < GetHighScore_1())
+            {
+                PlayerPrefs.SetFloat(HighScoreTime1,t);
+                PlayerPrefs.SetString(HighScoreName1, PlayerPrefs.GetString(PlayerName));
+                return;
+            }
+            PlayerPrefs.SetFloat(HighScoreTime2,t);
+            PlayerPrefs.SetString(HighScoreName2, PlayerPrefs.GetString(PlayerName));
+            return;
+        }
+        PlayerPrefs.SetFloat(HighScoreTime3,t);
+        PlayerPrefs.SetString(HighScoreName3, PlayerPrefs.GetString(PlayerName));
+    }
+    private float GetHighScore_1()
+    {
+        var i = PlayerPrefs.GetFloat(HighScoreTime1);
+        return i; 
+    }
+    
+    private float GetHighScore_2()
+    {
+        var i = PlayerPrefs.GetFloat(HighScoreTime2);
+        return i; 
+    }
+    
+    private float GetHighScore_3()
+    {
+        var i = PlayerPrefs.GetFloat(HighScoreTime3);
+        return i; 
+    }
 
-    void UnlockCursor()
+    private void UnlockCursor()
     {
         Cursor.lockState = CursorLockMode.None;
     }
 
-
-
+    // Enums 
     public enum GameState
     {
         Idle,
@@ -113,6 +149,6 @@ public class GameManager : MonoBehaviour
         Level1,
         Level2,
         GameOver,
-        YouWon,
+        YouWon
     }
 }

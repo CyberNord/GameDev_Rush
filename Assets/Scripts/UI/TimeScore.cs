@@ -1,14 +1,12 @@
-﻿using System;
-
-namespace UI
+﻿namespace UI
 {
     public class TimeScore
     {
         private float time_score;
 
-        public TimeScore()
+        public TimeScore(float timeScore)
         {
-            time_score = 0f; 
+            time_score = timeScore;
         }
 
         public float GetTimeScore()
@@ -21,7 +19,7 @@ namespace UI
             time_score= newTime;
         }
 
-        public String GetString()
+        public string GetString()
         {
             int hrs = 00 ;
             int min = (int)time_score / 60;

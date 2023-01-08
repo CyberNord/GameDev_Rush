@@ -1,7 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using static UserConstants.Constants;
 
 public class GameMenuButtons : MonoBehaviour
 {
@@ -28,6 +26,18 @@ public class GameMenuButtons : MonoBehaviour
         Debug.Log("Clicked NewGame!");
         gm.gameState = GameManager.GameState.Level1;
         gm.CheckState();
+    }
+    
+    public void ResetHighscore()
+    {
+        PlayerPrefs.SetString(HighScoreName1, "Fritz");
+        PlayerPrefs.SetFloat(HighScoreTime1,150f);
+        PlayerPrefs.SetString(HighScoreName2, "Maria");
+        PlayerPrefs.SetFloat(HighScoreTime2,200f);
+        PlayerPrefs.SetString(HighScoreName3,"Alois");
+        PlayerPrefs.SetFloat(HighScoreTime3,250f);
+        
+        Debug.Log("Highscore resetted");
     }
 
     public void testClick()
