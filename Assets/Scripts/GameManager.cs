@@ -7,13 +7,12 @@ using static UserConstants.Constants;
 public class GameManager : MonoBehaviour
 {
     public static GameManager gameManager;
-    private const int LIVEPOOL = 100;
     public TimeScore currentTimeScore; 
 
     // public TMP_Text livesText;
     public GameState gameState = GameState.Idle;
 
-    private int _lives = LIVEPOOL;
+    private int _lives = LivePool; 
 
     public int GetLives()
     {
@@ -57,14 +56,7 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        // livesText.text = lives + " Livesasd";
-    }
-
-
+    
     public void CheckState()
     {
         switch (gameState)
@@ -82,7 +74,7 @@ public class GameManager : MonoBehaviour
                 break;
             case GameState.Level1:
                 SceneManager.LoadScene("Level1");
-                _lives = LIVEPOOL;
+                _lives = LivePool;
                 break;
             case GameState.Level2:
                 break;

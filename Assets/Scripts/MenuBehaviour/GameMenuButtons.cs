@@ -30,12 +30,12 @@ public class GameMenuButtons : MonoBehaviour
     
     public void ResetHighscore()
     {
-        PlayerPrefs.SetString(HighScoreName1, "Fritz");
-        PlayerPrefs.SetFloat(HighScoreTime1,600f);
-        PlayerPrefs.SetString(HighScoreName2, "Maria");
-        PlayerPrefs.SetFloat(HighScoreTime2,900f);
-        PlayerPrefs.SetString(HighScoreName3,"Alois");
-        PlayerPrefs.SetFloat(HighScoreTime3,1500f);
+        PlayerPrefs.SetString(HighScoreName1, DummyName1);
+        PlayerPrefs.SetFloat(HighScoreTime1,DummyTime1);
+        PlayerPrefs.SetString(HighScoreName2, DummyName2);
+        PlayerPrefs.SetFloat(HighScoreTime2,DummyTime2);
+        PlayerPrefs.SetString(HighScoreName3,DummyName3);
+        PlayerPrefs.SetFloat(HighScoreTime3,DummyTime3);
         
         Debug.Log("Highscore resetted");
     }
@@ -49,6 +49,5 @@ public class GameMenuButtons : MonoBehaviour
     public void Exit()
     {
         Application.Quit();
-
     }
 }
