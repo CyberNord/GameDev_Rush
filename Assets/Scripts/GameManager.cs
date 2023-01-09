@@ -7,7 +7,7 @@ using static UserConstants.Constants;
 public class GameManager : MonoBehaviour
 {
     public static GameManager gameManager;
-    private const int LIVEPOOL = 1;
+    private const int LIVEPOOL = 100;
     public TimeScore currentTimeScore; 
 
     // public TMP_Text livesText;
