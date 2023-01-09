@@ -12,10 +12,10 @@ public class CameraCtrl : MonoBehaviour
     [Header("Mouse Settings")]
     [SerializeField] private float mouseSensitivity = 1.0f;
     [SerializeField] private Transform target;
-    private float distanceFromTarget = 5;
+    private float distanceFromTarget = 3;
 
     private int MIN_DIST = 1; 
-    private int MAX_DIST = 8; 
+    private int MAX_DIST = 6; 
     
 
     private Vector3 curRotationVector3;
