@@ -31,11 +31,11 @@ public class GameMenuButtons : MonoBehaviour
     public void ResetHighscore()
     {
         PlayerPrefs.SetString(HighScoreName1, "Fritz");
-        PlayerPrefs.SetFloat(HighScoreTime1,150f);
+        PlayerPrefs.SetFloat(HighScoreTime1,600f);
         PlayerPrefs.SetString(HighScoreName2, "Maria");
-        PlayerPrefs.SetFloat(HighScoreTime2,200f);
+        PlayerPrefs.SetFloat(HighScoreTime2,900f);
         PlayerPrefs.SetString(HighScoreName3,"Alois");
-        PlayerPrefs.SetFloat(HighScoreTime3,250f);
+        PlayerPrefs.SetFloat(HighScoreTime3,1500f);
         
         Debug.Log("Highscore resetted");
     }
