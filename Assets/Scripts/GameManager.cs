@@ -98,10 +98,19 @@ public class GameManager : MonoBehaviour
         {
             if (t < GetHighScore_1())
             {
+                PlayerPrefs.SetFloat(HighScoreTime3,PlayerPrefs.GetFloat(HighScoreTime2));
+                PlayerPrefs.SetString(HighScoreName3, PlayerPrefs.GetString(HighScoreName2));
+                
+                PlayerPrefs.SetFloat(HighScoreTime2,PlayerPrefs.GetFloat(HighScoreTime1));
+                PlayerPrefs.SetString(HighScoreName2, PlayerPrefs.GetString(HighScoreName1));
+                
                 PlayerPrefs.SetFloat(HighScoreTime1,t);
                 PlayerPrefs.SetString(HighScoreName1, PlayerPrefs.GetString(PlayerName));
                 return;
             }
+            PlayerPrefs.SetFloat(HighScoreTime3,PlayerPrefs.GetFloat(HighScoreTime2));
+            PlayerPrefs.SetString(HighScoreName3, PlayerPrefs.GetString(HighScoreName2));
+            
             PlayerPrefs.SetFloat(HighScoreTime2,t);
             PlayerPrefs.SetString(HighScoreName2, PlayerPrefs.GetString(PlayerName));
             return;

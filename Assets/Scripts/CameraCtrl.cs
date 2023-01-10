@@ -62,7 +62,7 @@ public class CameraCtrl : MonoBehaviour
             rotationX -= mouseY;
 
             // limit axis
-            rotationX = Mathf.Clamp(rotationX, 10, 80);
+            rotationX = Mathf.Clamp(rotationX, -20, 80);
 
             // smoothing
             Vector3 nextRotationVector3 = new Vector3(rotationX, rotationY, 0);
