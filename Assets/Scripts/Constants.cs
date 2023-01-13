@@ -16,13 +16,16 @@ namespace UserConstants
         public const string PlayerName = "Player_name";
         
         // Tutorial
-        public const string TutorialText1 = "Use W-A-S-D to move";
+        public const string TutorialText1 = "Use W-A-S-D to move and mouse to control the hero's rotation";
         public const string TutorialText2 = "I am highly alergic to water";
-        public const string TutorialText3 = "Zoom in & out with the mouse weel";
-        public const string TutorialText4 = "Change camera view clicking left Mouse Button & turning mouse";
-        public const string TutorialText5 = "Spacebar for jumping";
-        public const string TutorialText6 = "Watch out for traps";
+        public const string TutorialText3 = "You can zoom with the mouse weel";
+        public const string TutorialText4 = "By pressing MB2 you can rotate the camera freely";
+        public const string TutorialText5 = "You can jump using the Spacebar";
+        public const string TutorialText6 = "Watch out for traps!";
         
+        // NPC
+        public const string NPCFemale1 = "Be careful out there!";
+
         // Lives
         public const int LivePool = 100;
         
