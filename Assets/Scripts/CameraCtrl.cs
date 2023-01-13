@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
@@ -15,13 +16,22 @@ public class CameraCtrl : MonoBehaviour
     private float distanceFromTarget = 3;
 
     private int MIN_DIST = 1; 
-    private int MAX_DIST = 6; 
-    
+    private int MAX_DIST = 6;
 
     private Vector3 curRotationVector3;
     private Vector3 smoothVelocityVector3 = Vector3.zero;
+    
+    private Vector3 defaultView;
+    private bool resetView = false; 
+    
 
     [SerializeField] private float smoothTime = 0.1f;
+
+    private void Start()
+    {
+        defaultView = transform.position;
+        
+    }
 
     void Update()
     {
@@ -52,9 +62,25 @@ public class CameraCtrl : MonoBehaviour
                 }
             }
         }
+        
+        //Snap back Camera View
+        if (resetView && !Input.GetKey(KeyCode.Mouse1))
+        {
+            transform.position = defaultView - transform.forward * distanceFromTarget * Time.deltaTime;
+            transform.localEulerAngles = new Vector3 (14, 0, 0);
 
+            rotationX = 14;
+            rotationY = 0;
+            curRotationVector3 = Vector3.SmoothDamp(curRotationVector3, new Vector3(rotationX, rotationY, 0), ref smoothVelocityVector3,
+                0);
+            
+            resetView = false; 
+        }
+        
+        // Rotate Camera View
         if (Input.GetKey(KeyCode.Mouse1))
         {
+            resetView = true;
             float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity;
             float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity;
 
@@ -75,6 +101,5 @@ public class CameraCtrl : MonoBehaviour
 
         // follow Target Object
         transform.position = target.position - transform.forward * distanceFromTarget;
-        
     }
 }
