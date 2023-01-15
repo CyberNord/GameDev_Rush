@@ -5,11 +5,16 @@ using UnityEngine;
 public class EnemyGhost1 : MonoBehaviour
 {
     public float moveDistance = 5f;
+    public float speed = 1;
+    
     public bool moveX = true;
     public bool moveY = true;
     public bool moveZ = true;
-    public float speed = 1; 
-
+    
+    public bool inverseX = false; 
+    public bool inverseY = false; 
+    public bool inverseZ = false; 
+    
     Vector3 _startingPos;
 
     Transform _trans;
@@ -29,20 +34,57 @@ public class EnemyGhost1 : MonoBehaviour
         
         if (moveX)
         {
-            x = Mathf.PingPong(Time.time * speed, moveDistance);
+            if (inverseX)
+            {
+                x = _startingPos.x  - Mathf.PingPong(Time.time * speed, moveDistance);
+            }
+            else
+            {
+                x = _startingPos.x  + Mathf.PingPong(Time.time * speed, moveDistance);
+            }
+            
+        }
+        else
+        {
+            x = _startingPos.x; 
         }
         
         if (moveY)
         {
-            y = Mathf.PingPong(Time.time * speed, moveDistance);
+            if (inverseY)
+            {
+                y = _startingPos.y  - Mathf.PingPong(Time.time * speed, moveDistance);
+            }
+            else
+            {
+                y = _startingPos.y  + Mathf.PingPong(Time.time * speed, moveDistance);
+            }
+        }
+        else
+        {
+            y = _startingPos.y; 
         }
         
         if (moveZ)
         {
-            z = Mathf.PingPong(Time.time * speed, moveDistance);
+            if (inverseZ)
+            {
+                z = _startingPos.z  - Mathf.PingPong(Time.time * speed, moveDistance);
+            }
+            else
+            {
+                z = _startingPos.z  + Mathf.PingPong(Time.time * speed, moveDistance);
+            }
+        }
+        else
+        {
+            z = _startingPos.z; 
         }
         
-        _trans.position = new Vector3(_startingPos.x + x, _startingPos.y + y, _startingPos.z + z);
+        
+        
+        
+        _trans.position = new Vector3(+ x,  y, z);
         
     }
 }
