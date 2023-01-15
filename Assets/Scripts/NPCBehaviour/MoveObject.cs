@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyGhost1 : MonoBehaviour
+public class MoveObject : MonoBehaviour
 {
     public float moveDistance = 5f;
     public float speed = 1;
@@ -13,11 +13,18 @@ public class EnemyGhost1 : MonoBehaviour
     
     public bool inverseX = false; 
     public bool inverseY = false; 
-    public bool inverseZ = false; 
+    public bool inverseZ = false;
+
+    private bool stop = false; 
     
     Vector3 _startingPos;
 
     Transform _trans;
+
+    public void StopMovement()
+    {
+        stop = true; 
+    }
 
     // Use this for initialization
     void Start () {
@@ -32,59 +39,57 @@ public class EnemyGhost1 : MonoBehaviour
         float y = 0;
         float z = 0;
         
+        if (stop) return;
         if (moveX)
         {
             if (inverseX)
             {
-                x = _startingPos.x  - Mathf.PingPong(Time.time * speed, moveDistance);
+                x = _startingPos.x - Mathf.PingPong(Time.time * speed, moveDistance);
             }
             else
             {
-                x = _startingPos.x  + Mathf.PingPong(Time.time * speed, moveDistance);
+                x = _startingPos.x + Mathf.PingPong(Time.time * speed, moveDistance);
             }
-            
+
         }
         else
         {
-            x = _startingPos.x; 
+            x = _startingPos.x;
         }
-        
+
         if (moveY)
         {
             if (inverseY)
             {
-                y = _startingPos.y  - Mathf.PingPong(Time.time * speed, moveDistance);
+                y = _startingPos.y - Mathf.PingPong(Time.time * speed, moveDistance);
             }
             else
             {
-                y = _startingPos.y  + Mathf.PingPong(Time.time * speed, moveDistance);
+                y = _startingPos.y + Mathf.PingPong(Time.time * speed, moveDistance);
             }
         }
         else
         {
-            y = _startingPos.y; 
+            y = _startingPos.y;
         }
-        
+
         if (moveZ)
         {
             if (inverseZ)
             {
-                z = _startingPos.z  - Mathf.PingPong(Time.time * speed, moveDistance);
+                z = _startingPos.z - Mathf.PingPong(Time.time * speed, moveDistance);
             }
             else
             {
-                z = _startingPos.z  + Mathf.PingPong(Time.time * speed, moveDistance);
+                z = _startingPos.z + Mathf.PingPong(Time.time * speed, moveDistance);
             }
         }
         else
         {
-            z = _startingPos.z; 
+            z = _startingPos.z;
         }
-        
-        
-        
-        
-        _trans.position = new Vector3(+ x,  y, z);
-        
+
+        _trans.position = new Vector3(+x, y, z);
+
     }
 }
