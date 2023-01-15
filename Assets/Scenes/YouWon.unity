@@ -615,6 +615,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8212289033976530622, guid: 1b31095a27f8f7a4494cd6be34a1a334, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1404265554}
+    - target: {fileID: 8212289033976530622, guid: 1b31095a27f8f7a4494cd6be34a1a334, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Exit
+      objectReference: {fileID: 0}
+    - target: {fileID: 8212289033976530622, guid: 1b31095a27f8f7a4494cd6be34a1a334, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GameOverButtons, Assembly-CSharp
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b31095a27f8f7a4494cd6be34a1a334, type: 3}
 --- !u!224 &682791070 stripped
@@ -1712,6 +1724,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1697757059}
     m_Modifications:
+    - target: {fileID: 7439430069566429837, guid: d3cd2c61db01974449af80ba8b0c46cb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1404265554}
+    - target: {fileID: 7439430069566429837, guid: d3cd2c61db01974449af80ba8b0c46cb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: BackToMainMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 7439430069566429837, guid: d3cd2c61db01974449af80ba8b0c46cb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GameOverButtons, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 7439430069566429838, guid: d3cd2c61db01974449af80ba8b0c46cb, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
