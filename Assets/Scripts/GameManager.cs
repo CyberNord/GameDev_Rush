@@ -7,7 +7,7 @@ using static UserConstants.Constants;
 public class GameManager : MonoBehaviour
 {
     public static GameManager gameManager;
-    public TimeScore currentTimeScore; 
+    public TimeScore currentTimeScore;
 
     // public TMP_Text livesText;
     public GameState gameState = GameState.Idle;
@@ -63,7 +63,7 @@ public class GameManager : MonoBehaviour
         {
             case GameState.gameMenu:
                 SceneManager.LoadScene("GameMenu");
-                UnlockCursor(); 
+                UnlockCursor();
                 break;
             case GameState.TestLevel:
                 // SceneManager.LoadScene("TestingEnvironment");

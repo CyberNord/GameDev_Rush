@@ -12,6 +12,9 @@ public class MovementV3 : MonoBehaviour
     [SerializeField] private float m_jumpHeight = 5.8f;
     private float m_speedMultiplicator;
 
+    [Header("Audio")]
+    [SerializeField] private SoundEffects _soundEffects; 
+
     private Rigidbody m_RigidBody;
     private GameManager gm;
 
@@ -26,7 +29,7 @@ public class MovementV3 : MonoBehaviour
     private Animator m_Animator;
 
     private bool isDed = false;
-    private bool jumpAction = true;
+    private bool landSound = false;
 
     private Vector3 respawnPoint;
     private GameManager.GameState curr;
@@ -41,7 +44,7 @@ public class MovementV3 : MonoBehaviour
         m_Animator = GetComponent<Animator>();
 
         respawnPoint = transform.position;
-        curr = gm.gameState; 
+        curr = gm.gameState;
         Debug.Log("current Level is " + curr);
         Cursor.lockState = CursorLockMode.Locked;
     }
@@ -74,13 +77,14 @@ public class MovementV3 : MonoBehaviour
 
         if (Input.GetKey(KeyCode.Escape))
         {
-            Application.Quit();
+            // Application.Quit();
+            gm.gameState = GameManager.GameState.GameOver; 
+            gm.CheckState();
         }
     }
 
     void RunCtr()
     {
-        
         float moveZ = Input.GetAxis("Vertical");
         float moveX = Input.GetAxis("Horizontal");
         float mouseCtrlX = horizontalMouseSpeed * Input.GetAxis("Mouse X");
@@ -124,13 +128,15 @@ public class MovementV3 : MonoBehaviour
 
         if (moveY > 0f && m_isGrounded)
         {
-            jumpAction = false; 
+            _soundEffects.JumpSound.Play();
+            landSound = true;
             Vector3 jumpVector = new Vector3(0f, m_jumpHeight, 0f);
             
             m_RigidBody.velocity = jumpVector ;
 
             m_Animator.SetBool("Jump", true);
             m_Animator.SetBool("isInAir", true);
+            
         }
     }
 
@@ -180,6 +186,9 @@ public class MovementV3 : MonoBehaviour
                 m_isGrounded = true;
                 m_Animator.SetBool("Jump", false);
                 m_Animator.SetBool("isInAir", false);
+                if (!landSound) continue;
+                _soundEffects.LandSound.Play();
+                landSound = false;
             }
         }
     }
