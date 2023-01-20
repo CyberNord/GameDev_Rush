@@ -24,7 +24,6 @@ public class MovementV3 : MonoBehaviour
     private float m_currentZ = 0;
     private float m_currentX = 0;
     private readonly float m_interpolation = 10;
-    private float m_turnSpeed = 300;
 
     private Animator m_Animator;
 
@@ -32,6 +31,8 @@ public class MovementV3 : MonoBehaviour
     private bool landSound = false;
 
     private Vector3 respawnPoint;
+    private bool respawn = false; 
+    private bool allowInput = true; 
     private GameManager.GameState curr;
     
     public float horizontalMouseSpeed = 2.0F;
@@ -50,7 +51,7 @@ public class MovementV3 : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    private void FixedUpdate()
     {
         if (isDed)
         {
@@ -60,7 +61,7 @@ public class MovementV3 : MonoBehaviour
         {
             m_Animator.SetTrigger("won"); 
         }
-        else
+        else if (allowInput)
         {
             RunCtr();
             JumpCtr();
@@ -68,7 +69,7 @@ public class MovementV3 : MonoBehaviour
         
     }
 
-    void Update()
+    private void Update()
     {
         if (gm.gameState == GameManager.GameState.GameOver)
         {
@@ -83,7 +84,7 @@ public class MovementV3 : MonoBehaviour
         }
     }
 
-    void RunCtr()
+    private void RunCtr()
     {
         float moveZ = Input.GetAxis("Vertical");
         float moveX = Input.GetAxis("Horizontal");
@@ -122,7 +123,7 @@ public class MovementV3 : MonoBehaviour
 
     }
 
-    void JumpCtr()
+    private void JumpCtr()
     {
         float moveY = Input.GetAxis("Jump");
 
@@ -144,20 +145,30 @@ public class MovementV3 : MonoBehaviour
     {
         m_Animator.SetBool("isDed", true);
         m_Animator.SetTrigger("isDed");
-        if (gm.GetLives() >= 0)
-        {
-            Invoke("Respawn", 4f);
-        }
+        allowInput = false;
+        Debug.Log("AllowInput (false) = " + allowInput);
+        if (gm.GetLives() <= 0) return;
+        Invoke(nameof(Respawn), 4.5f);
+        respawn = true; 
+        Invoke(nameof(AllowInput), 5f);
 
     }
 
     private void Respawn()
     {
-        transform.position = respawnPoint;
+        if (!respawn) return;
         isDed = false;
-        m_Animator.SetBool("isDed", false);
         gm.gameState = curr;
+        transform.position = respawnPoint;
+        m_Animator.SetBool("isDed", false);
         Debug.Log("Respawned. Lives left = " + gm.GetLives());
+        Debug.Log("GameState = " + gm.gameState);
+        respawn = false;
+    }
+
+    public void AllowInput( )
+    {
+        allowInput = true;
     }
 
     private void OnTriggerEnter(Collider collision)

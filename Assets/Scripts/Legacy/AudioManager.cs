@@ -19,7 +19,7 @@ public class AudioManager : MonoBehaviour
     public AudioSource MainLoop;
     
     private GameManager.GameState _currState;
-    private GameManager.GameState _savedState = GameManager.GameState.TestLevel;
+    // private GameManager.GameState _savedState = GameManager.GameState.TestLevel;
 
     private AudioSource currTrack;  
 

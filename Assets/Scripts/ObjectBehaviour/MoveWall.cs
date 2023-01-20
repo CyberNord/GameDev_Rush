@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class MoveWall: MonoBehaviour
 {
-    [SerializeField] private GameObject gameObject;
+    [SerializeField] private new GameObject gameObject;
     [SerializeField] private float xChange;
     [SerializeField] private float yChange;
     [SerializeField] private float zChange;

@@ -13,7 +13,14 @@ public class DieOnTouch : MonoBehaviour
     {
         gm.ReduceLives(); // lives -1 
         gm.gameState = GameManager.GameState.GameOver;
-        Invoke("GoToGameOver", 6f);
+        if (gm.GetLives() < 1)
+        {
+            Invoke("GoToGameOver", 6f);
+        }
+        else
+        {
+            Invoke("GoToGameOver", 5f);
+        }
     }
     
     private void GoToGameOver()
