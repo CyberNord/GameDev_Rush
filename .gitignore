@@ -5,7 +5,10 @@
 /.vsconfig
 /Temp
 /Assembly-CSharp.csproj
-/Assets/Plugins
+/Assets/Plugins/Objects
+/Assets/Plugins/Other
+/Assets/Plugins/Sounds
+/Assets/Plugins/Textures
 /Rush.sln
 /Assembly-CSharp-Editor.csproj
 /DebugPositions.txt
