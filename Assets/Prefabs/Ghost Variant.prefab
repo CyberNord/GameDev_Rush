@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 127002, guid: 99cdb7462838a6342bd2288456e75888, type: 3}
       propertyPath: m_Name
-      value: Ghost
+      value: Ghost Variant
       objectReference: {fileID: 0}
     - target: {fileID: 449332, guid: 99cdb7462838a6342bd2288456e75888, type: 3}
       propertyPath: m_RootOrder
@@ -92,10 +92,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveDistance: 2
+  speed: 1
   moveX: 1
   moveY: 1
   moveZ: 1
---- !u!114 &327460427
+  inverseX: 0
+  inverseY: 0
+  inverseZ: 0
+--- !u!114 &3335744944772069694
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -104,6 +108,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 567738806765662068}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 040ea9fbec918734d911aba82c1eeb33, type: 3}
+  m_Script: {fileID: 11500000, guid: 5d9d43dbbc233004886834f1bef3afee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playSound: 0
