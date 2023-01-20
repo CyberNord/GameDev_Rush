@@ -23,6 +23,9 @@ public class SoundEffects : MonoBehaviour
     public AudioSource ghostSound4;
     public AudioSource ghostSound5;
     public AudioSource ghostSound6;
+    
+    [Header("misc")]
+    public AudioSource HitSound;
 
 
 
