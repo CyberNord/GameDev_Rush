@@ -5,10 +5,24 @@
 /.vsconfig
 /Temp
 /Assembly-CSharp.csproj
-/Assets/Plugins/Objects/
-/Assets/Plugins/Other/
-/Assets/Plugins/Sounds/
-/Assets/Plugins/Textures/
+/Assets/Plugins/Objects/Dungeon Pack
+/Assets/Plugins/Objects/Lowpoly Nature & Village Pack
+/Assets/Plugins/Objects/LowPolyDungeonsLite
+/Assets/Plugins/Objects/PolygonDungeon
+/Assets/Plugins/Objects/SimpleNaturePack
+/Assets/Plugins/Other/_TerrainAutoUpgrade
+/Assets/Plugins/Other/Animal People Fox
+/Assets/Plugins/Other/PolarizedPlatformPack
+/Assets/Plugins/Other/Teleportation Pad
+/Assets/Plugins/Other/TextMesh Pro
+/Assets/Plugins/Other/Tutorial Scene
+/Assets/Plugins/Sounds/Medieval Action - FX Pack 2.0
+/Assets/Plugins/Sounds/RPG_Essentials_Free
+/Assets/Plugins/Sounds/Soft RPG Music Pack
+/Assets/Plugins/Sounds/Ultimate SFX Bundle - HD Remaster
+/Assets/Plugins/Textures/Flat Textures Pack
+/Assets/Plugins/Textures/Lava Texture
+/Assets/Plugins/Textures/TerrainTexturesPackFree
 /Rush.sln
 /Assembly-CSharp-Editor.csproj
 /DebugPositions.txt
