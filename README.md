@@ -1,35 +1,52 @@
 # Rush
-### game-dev-2021-22-submission-northerncoders
+### game-dev-2022-23-submission-northerncoders
 
-This is a Unity Project for GameDevelopment. 
-The Game is basically a 3D Jump & Run Plattformer.
-The Goal of this game is to reach the endof each level.
-
-
+This is a Unity Project for GameDevelopment.  The Game is basically a 3D Jump & Run Plattformer. The Goal of this game is to reach the endof each level.
 
 
 ## Features
 
 - 3D Jump & Run
+-  Timer 
 - Highscore Table
-- different Traps and obstacles through the level to master
+- Various traps and obstacles through the level to overcome
 
 
 ## Authors
 
-The project was coded by a single Person.
+The project was entirely created  by a single Person.
+- [@CyberNord](https://github.com/CyberNord) 
+Rudolf Garstenauer 
+k11904991
+rgarstenauer@yahoo.com
 
-- [@CyberNord](https://github.com/CyberNord) - Rudolf Garstenauer k11904991
-
-
+Responsibilities 
+ - Level design & World building
+ - Scripting & Coding
+ - Animation
+ - UI & Game Menus 
+ - Controls
+ - Traps
+ - Testing
 
 ## Installation
 
-Unpack the file "Rush_bin.zip" and run the file Rush.exe.
+### Rush
+To play the Game unpack the file "Rush_bin.zip" found in [releases](https://github.com/jku-icg-classroom/game-dev-2021-22-submission-northerncoders/releases/tag/Rush) or [here (Google Drive Link)](https://drive.google.com/drive/u/0/folders/1SsUjjy3WoCffeItv8k4SiyCxDWcyT8mm)  and run the file Rush.exe.
+
 It is assumed to run the game in Full HD (1920x1080) resolution. Other resolutions are not tested and may cause the UI to be postponed. 
 It was tested on Win10 but should run on other operating systems as well. 
 The minimum PC requirements were not tested. 
- 
+
+### Unity Project
+The Project is written in Unity editor version 2021.3.11f1.
+
+To open the Unity Project download the Sourcecode thats commited on gitHub. 
+Additionaly you have to download the used Plugins from [here (Google Drive Link)](https://drive.google.com/file/d/1fYU9FhbpKSEF8y0wInllpzUpYlAI1TwM/view?usp=share_link) .
+Unpack the Plugins Zip and move them to the correct folder.
+
+> Rush\Assets\Plugins
+
 ## Controlls
 
 * W-A-S-D Keys to move the character forwards, sidewards or backwards
@@ -41,9 +58,9 @@ The minimum PC requirements were not tested.
 * Holding Shift Key to reduce movement speed of the Character
 
 
-## Acknowledgements
+## Assets
 
-A list of all Assets that were used in Rush. 
+List of all assets used in the game. 
 
 Objects
  - [POLYGON Dungeons - Low Poly 3D Art](https://assetstore.unity.com/packages/3d/environments/dungeons/polygon-dungeons-low-poly-3d-art-by-synty-102677)
@@ -61,9 +78,9 @@ Textures
 - [Terrain Textures Pack Free ](https://assetstore.unity.com/packages/2d/textures-materials/nature/terrain-textures-pack-free-139542)
 
 Sound
--[Middle Age - Medieval Action Sound FX Pack](https://assetstore.unity.com/packages/audio/sound-fx/middle-age-medieval-action-sound-fx-pack-54030)
--[Ultimate Sound FX Bundle](https://assetstore.unity.com/packages/audio/sound-fx/ultimate-sound-fx-bundle-151756)
--[RPG Essentials sound Effects](https://assetstore.unity.com/packages/audio/sound-fx/rpg-essentials-sound-effects-free-227708)
+- [Middle Age - Medieval Action Sound FX Pack](https://assetstore.unity.com/packages/audio/sound-fx/middle-age-medieval-action-sound-fx-pack-54030)
+- [Ultimate Sound FX Bundle](https://assetstore.unity.com/packages/audio/sound-fx/ultimate-sound-fx-bundle-151756)
+- [RPG Essentials sound Effects](https://assetstore.unity.com/packages/audio/sound-fx/rpg-essentials-sound-effects-free-227708)
 
 Used in early stages of GameDevelopment
 Those Packages aren't used anymore however some of them might be still in the Project (unused)
@@ -73,3 +90,14 @@ Those Packages aren't used anymore however some of them might be still in the Pr
  - [Character Pack: Free Animal People Sample](https://assetstore.unity.com/packages/3d/characters/humanoids/character-pack-free-animal-people-sample-204568)
  - [Custom Teleporter Pad](https://assetstore.unity.com/packages/tools/custom-teleporter-pad-script-20098)
 
+## Some Answers
+
+Q: **Why are there unused Assets in the Project?**
+A:  "Never touch a running System" - I forgot to remove some Assets earlier and I don't want to risk breaking the Project by accident. I think thats some additional drawback working alone. 
+
+Q: **Are the scripts copies from the Asset store?**
+A: No, I had a goal to script everything on my own for learning purposes - I used many different Tutorials on different plattforms like Unity-Forums, Stack Overflow, Youtube including two Udemy courses I bought to dive deeper into the topic. 
+Only  the collision detedtion logic found in Character Movement was entirely adapted from a Character pack.
+
+Q: **Skins, Coins, shop mechanic is missing**
+A: I had to adapt the scope of my game, since my teambuddy left me right before *Playtesting Session 1* without commiting anything. So I had to cut out some ideas to get the Project done. 
