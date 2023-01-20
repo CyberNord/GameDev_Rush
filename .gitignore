@@ -5,10 +5,17 @@
 /.vsconfig
 /Temp
 /Assembly-CSharp.csproj
+<<<<<<< HEAD
 /Assets/Plugins/Objects/
 /Assets/Plugins/Other/
 /Assets/Plugins/Sounds/
 /Assets/Plugins/Textures/
+=======
+/Assets/Plugins/Objects
+/Assets/Plugins/Other
+/Assets/Plugins/Sounds
+/Assets/Plugins/Textures
+>>>>>>> fb2e54225619e4bed701e0a3ada33c7baec4fdee
 /Rush.sln
 /Assembly-CSharp-Editor.csproj
 /DebugPositions.txt
