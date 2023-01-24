@@ -15,7 +15,7 @@ public class CameraCtrl : MonoBehaviour
     [SerializeField] private Transform target;
     private float distanceFromTarget = 3;
 
-    private int MIN_DIST = 1; 
+    private int MIN_DIST = -2; 
     private int MAX_DIST = 6;
 
     private Vector3 curRotationVector3;

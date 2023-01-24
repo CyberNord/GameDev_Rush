@@ -1,8 +1,12 @@
 # Rush
-### game-dev-2022-23-submission-northerncoders
+## game-dev-2022-23-submission-northerncoders
 
 This is a Unity Project for GameDevelopment.  The Game is basically a 3D Jump & Run Plattformer. The Goal of this game is to reach the endof each level.
 
+
+The trailer preview of *"Rush - The Game"* can be found: 
+
+ - [YouTube -  Trailer Rush v1](https://www.youtube.com/watch?v=r4lnEHMvj3A&ab_channel=NorthernCoder)
 
 ## Features
 
@@ -11,14 +15,10 @@ This is a Unity Project for GameDevelopment.  The Game is basically a 3D Jump & 
 - Highscore Table
 - Various traps and obstacles through the level to overcome
 
-
 ## Authors
 
 The project was entirely created  by a single Person.
 - [@CyberNord](https://github.com/CyberNord) 
-Rudolf Garstenauer 
-k11904991
-rgarstenauer@yahoo.com
 
 Responsibilities 
  - Level design & World building
@@ -32,7 +32,7 @@ Responsibilities
 ## Installation
 
 ### Rush
-To play the Game unpack the file "Rush_bin.zip" found in [releases](https://github.com/jku-icg-classroom/game-dev-2021-22-submission-northerncoders/releases/tag/Rush) or [here (Google Drive Link)](https://drive.google.com/drive/u/0/folders/1SsUjjy3WoCffeItv8k4SiyCxDWcyT8mm)  and run the file Rush.exe.
+To play the Game unpack the file "Rush_bin.zip" found in [releases](https://google.com) and run the file Rush.exe.
 
 It is assumed to run the game in Full HD (1920x1080) resolution. Other resolutions are not tested and may cause the UI to be postponed. 
 It was tested on Win10 but should run on other operating systems as well. 
@@ -40,12 +40,6 @@ The minimum PC requirements were not tested.
 
 ### Unity Project
 The Project is written in Unity editor version 2021.3.11f1.
-
-To open the Unity Project download the Sourcecode thats commited on gitHub. 
-Additionaly you have to download the used Plugins from [here (Google Drive Link)](https://drive.google.com/file/d/1fYU9FhbpKSEF8y0wInllpzUpYlAI1TwM/view?usp=share_link) .
-Unpack the Plugins Zip and move them to the correct folder.
-
-> Rush\Assets\Plugins
 
 ## Controlls
 
@@ -82,22 +76,23 @@ Sound
 - [Ultimate Sound FX Bundle](https://assetstore.unity.com/packages/audio/sound-fx/ultimate-sound-fx-bundle-151756)
 - [RPG Essentials sound Effects](https://assetstore.unity.com/packages/audio/sound-fx/rpg-essentials-sound-effects-free-227708)
 
-Used in early stages of GameDevelopment
-Those Packages aren't used anymore however some of them might be still in the Project (unused)
- - [Banana Man](https://assetstore.unity.com/packages/3d/characters/humanoids/banana-man-196830)
- - [Speed Tutor Test Scene](https://assetstore.unity.com/packages/3d/environments/speedtutor-test-scene-free-159460)
- - [Character Pack: Free Sample](https://assetstore.unity.com/packages/3d/characters/humanoids/character-pack-free-sample-79870)
- - [Character Pack: Free Animal People Sample](https://assetstore.unity.com/packages/3d/characters/humanoids/character-pack-free-animal-people-sample-204568)
- - [Custom Teleporter Pad](https://assetstore.unity.com/packages/tools/custom-teleporter-pad-script-20098)
+## About the Project
+The project was done for a LVA "Game Development" WS2022 JKU Linz. 
+Project time ~3months. Within that time I had to learn Unity, C# and realize the own idea into a game. 
+I had to cut out features I planned to meet the deadline, also Unity is quite unforgiving at first for beginners. 
+I think my next projects will be much more polished. 
 
 ## Some Answers
 
 Q: **Why are there unused Assets in the Project?**
+
 A:  "Never touch a running System" - I forgot to remove some Assets earlier and I don't want to risk breaking the Project by accident. I think thats some additional drawback working alone. 
 
 Q: **Are the scripts copies from the Asset store?**
+
 A: No, I had a goal to script everything on my own for learning purposes - I used many different Tutorials on different plattforms like Unity-Forums, Stack Overflow, Youtube including two Udemy courses I bought to dive deeper into the topic. 
 Only  the collision detedtion logic found in Character Movement was entirely adapted from a Character pack.
 
 Q: **Skins, Coins, shop mechanic is missing**
+
 A: I had to adapt the scope of my game, since my teambuddy left me right before *Playtesting Session 1* without commiting anything. So I had to cut out some ideas to get the Project done. 

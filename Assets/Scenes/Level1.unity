@@ -15965,12 +15965,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 523206134}
   m_LocalRotation: {x: -0.038573943, y: -0.07869079, z: 0.028426083, w: 0.99574685}
-  m_LocalPosition: {x: -22.000793, y: 10.103706, z: 104.70491}
-  m_LocalScale: {x: 1.3772577, y: 0.39801, z: 0.40938}
+  m_LocalPosition: {x: -22.08, y: 10.15, z: 105.321}
+  m_LocalScale: {x: 0.82249826, y: 0.39801, z: 0.74720037}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1328736924}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: -4.149, y: -9.168, z: 3.603}
 --- !u!65 &523206136
 BoxCollider:
@@ -24803,51 +24803,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 445098, guid: 4277b7dfb488f614f8e5efff603e78da, type: 3}
   m_PrefabInstance: {fileID: 1768638056}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &868701910
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 868701911}
-  - component: {fileID: 868701912}
-  m_Layer: 0
-  m_Name: Respawn_Tutorial (1)
-  m_TagString: Checkpoint
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &868701911
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 868701910}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 165.39, y: -2.952, z: 111.061}
-  m_LocalScale: {x: 1, y: 0.39801002, z: 0.4}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1328736924}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &868701912
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 868701910}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2.8372803, y: 0.5671234, z: 2.7149315}
-  m_Center: {x: 0.32714844, y: -0.2164383, z: -0.14662552}
 --- !u!4 &869471065 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 764995405513498318, guid: 43b87cc505166254eb5d2fdd2b53e7ad, type: 3}
@@ -26899,51 +26854,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4768649096666216, guid: 87db960e0d32bd8469c9342504c75ea9, type: 3}
   m_PrefabInstance: {fileID: 954326218}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &954512020
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 954512021}
-  - component: {fileID: 954512022}
-  m_Layer: 0
-  m_Name: Respawn_Stage1 (2)
-  m_TagString: Checkpoint
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &954512021
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 954512020}
-  m_LocalRotation: {x: -0.01852672, y: -0.0039347536, z: -0.00038283525, w: 0.99982053}
-  m_LocalPosition: {x: -67.08, y: 6.92, z: 245.41}
-  m_LocalScale: {x: 2.6, y: 0.2, z: 0.8}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1328736924}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: -2.123, y: -0.45, z: -0.036}
---- !u!65 &954512022
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 954512020}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2.8372803, y: 0.5671234, z: 2.7149315}
-  m_Center: {x: 0.32714844, y: -0.2164383, z: -0.14662552}
 --- !u!4 &957830065 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 434470, guid: 672ee923d7f567d4999ca9b98280f884, type: 3}
@@ -36084,51 +35994,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 449654, guid: 5e966a5749f9b264a9eee5c9fffdfde9, type: 3}
   m_PrefabInstance: {fileID: 1045615569}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1264270458
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1264270459}
-  - component: {fileID: 1264270460}
-  m_Layer: 0
-  m_Name: Respawn_Stage1 (1)
-  m_TagString: Checkpoint
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1264270459
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1264270458}
-  m_LocalRotation: {x: 0.008018071, y: 0.06245435, z: -0.001021762, w: 0.99801517}
-  m_LocalPosition: {x: -65.212, y: 6.57, z: 203.565}
-  m_LocalScale: {x: 1.9555063, y: 0.39801, z: 0.38771972}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1328736924}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0.924, y: 7.161, z: -0.059}
---- !u!65 &1264270460
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1264270458}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.167972, y: 2.990921, z: 6.3560147}
-  m_Center: {x: -0.5075027, y: 1.6146553, z: 1.6739317}
 --- !u!4 &1268320634 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 454796, guid: 3bb5571f612e6d14d82b7a56913e82af, type: 3}
@@ -37779,12 +37644,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1423546458}
-  - {fileID: 868701911}
   - {fileID: 1471303847}
-  - {fileID: 1652018274}
   - {fileID: 523206135}
-  - {fileID: 1264270459}
-  - {fileID: 954512021}
   m_Father: {fileID: 618714524}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -40242,7 +40103,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1423546457}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 165.487, y: -12.735, z: 126.736}
+  m_LocalPosition: {x: 166.186, y: -13.131, z: 126.736}
   m_LocalScale: {x: 0.4, y: 0.39801002, z: 0.4}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -42023,7 +41884,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1328736924}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1471303848
 BoxCollider:
@@ -46808,51 +46669,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 764995405513498318, guid: 43b87cc505166254eb5d2fdd2b53e7ad, type: 3}
   m_PrefabInstance: {fileID: 1433447474}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1652018273
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1652018274}
-  - component: {fileID: 1652018275}
-  m_Layer: 0
-  m_Name: Respawn_Stage1
-  m_TagString: Checkpoint
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1652018274
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1652018273}
-  m_LocalRotation: {x: -0, y: 0.14170578, z: -0, w: 0.9899089}
-  m_LocalPosition: {x: -15.183, y: 5.92, z: 58.887}
-  m_LocalScale: {x: 0.9118149, y: 0.39801002, z: 0.6388784}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1328736924}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 16.293, z: 0}
---- !u!65 &1652018275
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1652018273}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2.8372803, y: 0.5671234, z: 2.7149315}
-  m_Center: {x: 0.32714844, y: -0.2164383, z: -0.14662552}
 --- !u!1 &1654553488 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 199444, guid: 6d0615b42061f5e4ca66efb44723fc65, type: 3}

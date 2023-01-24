@@ -27,7 +27,7 @@ namespace UserConstants
         public const string NPCFemale1 = "Be careful out there!";
 
         // Lives
-        public const int LivePool = 100;
+        public const int LivePool = 5;
         
         // Reset Values Highscore
         public const string DummyName1 = "Fritz";
