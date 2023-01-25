@@ -32,7 +32,7 @@ Responsibilities
 ## Installation
 
 ### Rush
-To play the Game unpack the file "Rush_bin.zip" found in [releases](https://google.com) and run the file Rush.exe.
+To play the Game unpack the file "Rush_bin.zip" found in [releases](https://github.com/CyberNord/GameDev_Rush/releases/tag/release_rush_prototype) and run the file Rush.exe.
 
 It is assumed to run the game in Full HD (1920x1080) resolution. Other resolutions are not tested and may cause the UI to be postponed. 
 It was tested on Win10 but should run on other operating systems as well. 
