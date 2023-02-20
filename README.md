@@ -4,6 +4,11 @@ This is a Unity Project for GameDevelopment.
 The Game is basically a 3D Jump & Run Plattformer. The Goal of this game is to reach the endof each level.
 This repo is the public release.
 
+## About the Project
+The project was done for a LVA "Game Development" WS2022 JKU Linz. 
+Project time ~3months. Within that time I had to learn Unity, C# and realize the own idea into a game. 
+I had to cut out features I planned to meet the deadline, also Unity is quite unforgiving at first for beginners. 
+I think my next projects will be much more polished.
 
 The trailer preview of *"Rush - The Game"* can be found: 
 
@@ -76,9 +81,3 @@ Sound
 - [Middle Age - Medieval Action Sound FX Pack](https://assetstore.unity.com/packages/audio/sound-fx/middle-age-medieval-action-sound-fx-pack-54030)
 - [Ultimate Sound FX Bundle](https://assetstore.unity.com/packages/audio/sound-fx/ultimate-sound-fx-bundle-151756)
 - [RPG Essentials sound Effects](https://assetstore.unity.com/packages/audio/sound-fx/rpg-essentials-sound-effects-free-227708)
-
-## About the Project
-The project was done for a LVA "Game Development" WS2022 JKU Linz. 
-Project time ~3months. Within that time I had to learn Unity, C# and realize the own idea into a game. 
-I had to cut out features I planned to meet the deadline, also Unity is quite unforgiving at first for beginners. 
-I think my next projects will be much more polished. 
