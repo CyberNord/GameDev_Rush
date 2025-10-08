@@ -1,8 +1,14 @@
 # Rush
-## game-dev-2022-23-submission-northerncoders
 
-This is a Unity Project for GameDevelopment.  The Game is basically a 3D Jump & Run Plattformer. The Goal of this game is to reach the endof each level.
+This is a Unity Project for GameDevelopment.  
+The Game is basically a 3D Jump & Run Plattformer. The Goal of this game is to reach the endof each level.
+This repo is the public release.
 
+## About the Project
+The project was done for a LVA "Game Development" WS2022 JKU Linz. 
+Project time ~3months. Within that time I had to learn Unity, C# and realize the own idea into a game. 
+I had to cut out features I planned to meet the deadline, also Unity is quite unforgiving at first for beginners. 
+I think my next projects will be much more polished.
 
 The trailer preview of *"Rush - The Game"* can be found: 
 
@@ -32,7 +38,7 @@ Responsibilities
 ## Installation
 
 ### Rush
-To play the Game unpack the file "Rush_bin.zip" found in [releases](https://google.com) and run the file Rush.exe.
+To play the Game unpack the file "Rush_bin.zip" found in [releases](https://github.com/CyberNord/GameDev_Rush/releases/tag/release_rush_prototype) and run the file Rush.exe.
 
 It is assumed to run the game in Full HD (1920x1080) resolution. Other resolutions are not tested and may cause the UI to be postponed. 
 It was tested on Win10 but should run on other operating systems as well. 
@@ -75,24 +81,3 @@ Sound
 - [Middle Age - Medieval Action Sound FX Pack](https://assetstore.unity.com/packages/audio/sound-fx/middle-age-medieval-action-sound-fx-pack-54030)
 - [Ultimate Sound FX Bundle](https://assetstore.unity.com/packages/audio/sound-fx/ultimate-sound-fx-bundle-151756)
 - [RPG Essentials sound Effects](https://assetstore.unity.com/packages/audio/sound-fx/rpg-essentials-sound-effects-free-227708)
-
-## About the Project
-The project was done for a LVA "Game Development" WS2022 JKU Linz. 
-Project time ~3months. Within that time I had to learn Unity, C# and realize the own idea into a game. 
-I had to cut out features I planned to meet the deadline, also Unity is quite unforgiving at first for beginners. 
-I think my next projects will be much more polished. 
-
-## Some Answers
-
-Q: **Why are there unused Assets in the Project?**
-
-A:  "Never touch a running System" - I forgot to remove some Assets earlier and I don't want to risk breaking the Project by accident. I think thats some additional drawback working alone. 
-
-Q: **Are the scripts copies from the Asset store?**
-
-A: No, I had a goal to script everything on my own for learning purposes - I used many different Tutorials on different plattforms like Unity-Forums, Stack Overflow, Youtube including two Udemy courses I bought to dive deeper into the topic. 
-Only  the collision detedtion logic found in Character Movement was entirely adapted from a Character pack.
-
-Q: **Skins, Coins, shop mechanic is missing**
-
-A: I had to adapt the scope of my game, since my teambuddy left me right before *Playtesting Session 1* without commiting anything. So I had to cut out some ideas to get the Project done. 
