@@ -17,7 +17,7 @@ The trailer preview of *"Rush - The Game"* can be found:
 ## Features
 
 - 3D Jump & Run
--  Timer 
+- Timer 
 - Highscore Table
 - Various traps and obstacles through the level to overcome
 
@@ -56,6 +56,12 @@ The Project is written in Unity editor version 2021.3.11f1.
 * Q-E Keys can also be used to turn the character
 * Pressing and holding right Mousebutton will unlock the Camera for free rotation. The Camera will snap back behind the character if RMB is released.
 * Holding Shift Key to reduce movement speed of the Character
+
+## Impressions
+<img width="570" height="329" alt="Unbenannt" src="https://github.com/user-attachments/assets/298ea539-dde1-4dd2-bb6a-3653f9686270" />
+<img width="593" height="361" alt="image" src="https://github.com/user-attachments/assets/8b1d0fb2-a06c-4ddb-8125-7c79dacbda3b" />
+<img width="510" height="602" alt="image" src="https://github.com/user-attachments/assets/1ce9b0aa-1d55-41d5-9ca5-31bf51be6c88" />
+
 
 
 ## Assets
